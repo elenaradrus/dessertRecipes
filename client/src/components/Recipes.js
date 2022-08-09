@@ -1,8 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 const Recipes = () => {
 
+    const { id } = useParams();
     const navigate = useNavigate();
 
     const goToHomePage = () => {
@@ -10,7 +11,7 @@ const Recipes = () => {
     }
 
     return ( <div>
-        <h1>Recipes Page</h1>
+        <h1>Recipes Page {id}</h1>
         <button onClick={() => goToHomePage()}>Go back to Home Page</button>
     </div> );
 }
