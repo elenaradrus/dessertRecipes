@@ -1,13 +1,19 @@
+import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import list from "../helpers/list";
-
 const Home = () => {
 
-    const { recipes } = list;
     const { id } = useParams();
-    
-
+    const [data, setData] = useState('');
     const navigate = useNavigate();
+
+    useEffect(() => {
+        fetch("recipeslist")
+            .then((response) => response.json())
+            .then((res) => {
+                setData(res.message);
+            });
+
+    }, []);
 
     const goToRecipesPage = (id) => {
         navigate(`/recipes/${id}`);
@@ -18,17 +24,17 @@ const Home = () => {
     return (
         <div>
             <h1>Home Page</h1>
-            <div className="recipesList">
-                {recipes.map((e, i) =>
+            <div className="list">
+                {data ? data.map((e, i) =>
                     <div key={i}>
                         <div>
                             <h1>{e.name}</h1>
                             <p>{e.description}</p>
+                            <img className="recipeImg" src={e.image} alt="cocaMalfeta"/>
                         </div>
 
-                        <button id={e.id} onClick={(e) => goToRecipesPage(e.target.id)}>Ver receta completa</button>
-                    </div>
-                )}
+                        <button id={e._id} onClick={(e) => goToRecipesPage(e.target.id)}>Ver receta completa</button>
+                    </div>) : ""}
             </div>
         </div>);
 }
