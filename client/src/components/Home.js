@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import "./Home.css"
+
 const Home = () => {
 
     const { id } = useParams();
@@ -27,10 +29,10 @@ const Home = () => {
             <div className="list">
                 {data ? data.map((e, i) =>
                     <div key={i}>
-                        <div>
-                            <h1>{e.name}</h1>
-                            <p>{e.description}</p>
-                            <img className="recipeImg" src={e.image} alt="cocaMalfeta"/>
+                        <div className="listData">
+                            <div><h1>{e.name}</h1></div>
+                            <div><p>{e.description}</p></div>
+                            <div><img className="recipeImg" src={e.image} alt="cocaMalfeta"/></div> 
                         </div>
 
                         <button id={e._id} onClick={(e) => goToRecipesPage(e.target.id)}>Ver receta completa</button>

@@ -5,6 +5,7 @@ const url = 'mongodb://127.0.0.1:27017/DessertRecipes';
 const MongoClient = mongo.MongoClient;
 const dataBase = "DessertRecipes";
 const collection = "Recipes";
+var ObjectId = require('mongodb').ObjectId;
 
 
 const user = {
@@ -21,6 +22,22 @@ const user = {
                     // console.log(result);
                     // res.send({result});
                 };
+                //db.close();
+            });
+        });
+    },
+    showRecipe: (req, res) => {
+
+        const recipeId = req.body.recipeId;
+
+        MongoClient.connect(url, function (err, db) {
+            if (err) throw err;
+            var dbo = db.db(dataBase);
+            var query = { "_id": ObjectId(recipeId)};
+            dbo.collection(collection).find(query).toArray(function (err, result) {
+                if (err) throw err;
+                //console.log(result);
+                res.json({code: 200, message: result, status: true});
                 //db.close();
             });
         });

@@ -1,0 +1,13 @@
+.list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 0rem 2rem 0rem 2rem;
+}
+
+.listData {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
