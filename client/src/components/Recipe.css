@@ -1,0 +1,26 @@
+.container-ingredients {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.ingredientsList {
+    height: 10rem;
+    width: 35rem;
+    line-height: 2rem;
+}
+
+.container-steps {
+    display: flex;
+    justify-content: center;
+}
+
+.steps {
+    height: 20rem;
+    width: 60rem;
+    line-height: 2rem;
+}
+
+.btnRecipes {
+    margin-bottom: 5rem;
+}

@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import "./Recipe.css";
 
 
 const Recipes = () => {
@@ -30,20 +31,28 @@ const Recipes = () => {
         navigate('/');
     }
 
-    return ( <div>
+    return (<div>
         <h1>Recipes Page</h1>
         <div className="oneRecipe">
-                {data ? data.map((e, i) =>
-                    <div key={i}>
-                        <div className="listData">
-                            <div><h1>{e.name}</h1></div>
-                            <div><p>{e.description}</p></div>
-                            <div><img className="recipeImg" src={e.image} alt="cocaMalfeta"/></div> 
+            {data ? data.map((e, i) =>
+                <div key={i}>
+                    <div className="listData">
+                        <div><h1>{e.name}</h1></div>
+                        <div><p>{e.description}</p></div>
+                        <div><img className="recipeImg" src={e.image} alt="cocaMalfeta" /></div>
+                        <div className="container-ingredients">
+                            <div className="ingredientsList">{e.ingredients}</div>
                         </div>
-                    </div>) : ""}
-            </div>
-        <button onClick={() => goToHomePage()}>Go back to Home Page</button>
-    </div> );
+                        <div className="container-steps">
+                            <div className="steps">{e.steps}</div>
+                        </div>
+
+
+                    </div>
+                </div>) : ""}
+        </div>
+        <button className="btnRecipes" onClick={() => goToHomePage()}>Go back to Home Page</button>
+    </div>);
 }
- 
+
 export default Recipes;
