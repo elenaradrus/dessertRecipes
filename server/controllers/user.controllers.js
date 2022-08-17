@@ -14,7 +14,6 @@ const user = {
         MongoClient.connect(url, function (err, db) {
             if (err) throw err;
             var dbo = db.db(dataBase);
-            //var query = { "lugar": "Tenerife" };
             dbo.collection(collection).find().toArray(function (err, result) {
                 if (err) throw err;
                 if(result) {
@@ -34,6 +33,22 @@ const user = {
             if (err) throw err;
             var dbo = db.db(dataBase);
             var query = { "_id": ObjectId(recipeId)};
+            dbo.collection(collection).find(query).toArray(function (err, result) {
+                if (err) throw err;
+                //console.log(result);
+                res.json({code: 200, message: result, status: true});
+                //db.close();
+            });
+        });
+    },
+    findRecipe: (req, res) => {
+
+        const recipeTag = req.body.recipeTag;
+
+        MongoClient.connect(url, function (err, db) {
+            if (err) throw err;
+            var dbo = db.db(dataBase);
+            var query = { "tags": recipeTag};
             dbo.collection(collection).find(query).toArray(function (err, result) {
                 if (err) throw err;
                 //console.log(result);
