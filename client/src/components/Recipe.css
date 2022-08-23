@@ -1,3 +1,9 @@
+.container-recipeImage {
+    display: flex;
+    justify-content: center;
+    height: 40rem;
+}
+
 .container-ingredients {
     display: flex;
     justify-content: center;
@@ -20,8 +26,4 @@
     width: 60rem;
     line-height: 2rem;
     margin-top: 2rem;
-}
-
-.btnRecipes {
-    margin-bottom: 5rem;
 }

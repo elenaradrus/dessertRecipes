@@ -5,9 +5,10 @@ import "./Home.css"
 const Home = () => {
 
     const { id } = useParams();
-    const [data, setData] = useState('');
+    const [data, setData] = useState();
     const [filter, setFilter] = useState('');
     const navigate = useNavigate();
+
 
     useEffect(() => {
         fetch("recipeslist")
@@ -17,6 +18,7 @@ const Home = () => {
             });
 
     }, []);
+
 
     const goToRecipesPage = (id) => {
         navigate(`/recipes/${id}`);
@@ -39,24 +41,30 @@ const Home = () => {
             .then((res) => {
                 setData(res.message);
             });
-            // console.log(recipe);
-            // console.log(filter);
-        
+
+        console.log(filter);
+
         return (
             <div className="list">
                 {data ? data.map((e, i) =>
                     <div key={i}>
-                        
-                        <div className="listData">
-                            <div><h1>{e.name}</h1></div>
-                            <div><p>{e.description}</p></div>
-                            <div><img className="recipeImg" src={e.image} alt="cocaMalfeta" /></div>
-                        </div>
 
-                        <button id={e._id} onClick={(e) => goToRecipesPage(e.target.id)}>Ver receta completa</button>
-                        
+                        <div className="listData">
+                            {/* <div><p>{e.description}</p></div> */}
+                            <div className="container-recipeImg">
+                                <img className="recipeImg" src={e.image} alt="recipeImage" id={e._id} onClick={(e) => goToRecipesPage(e.target.id)}/>
+                            </div>
+
+                            <div className="recipeName">
+                                <h2>{e.name}</h2>
+                            </div>
+
+                            {/* <div className="container-seeRecipeBtn">
+                                <button className="seeRecipeBtn" id={e._id} onClick={(e) => goToRecipesPage(e.target.id)}>Ver receta completa</button>
+                            </div> */}
+
+                        </div>
                     </div>) : ""}
-                    
             </div>
         )
 
@@ -83,19 +91,27 @@ const Home = () => {
                     <option>cacahuete</option>
                     <option>chocolate</option>
                 </select>
-                <button onClick={() => getFilter()}>Buscar</button>
+                <button onClick={() => filter === '' ? window.location.reload() : getFilter()}>Buscar</button>
             </div>
 
             <div className="list">
                 {data ? data.map((e, i) =>
                     <div key={i}>
                         <div className="listData">
-                            <div><h1>{e.name}</h1></div>
-                            <div><p>{e.description}</p></div>
-                            <div><img className="recipeImg" src={e.image} alt="cocaMalfeta" /></div>
+                            {/* <div><p>{e.description}</p></div> */}
+                            <div className="container-recipeImg">
+                                <img className="recipeImg" src={e.image} alt="recipeImage" id={e._id} onClick={(e) => goToRecipesPage(e.target.id)}/>
+                            </div>
+
+                            <div className="recipeName">
+                                <h2>{e.name}</h2>
+                            </div>
+
+                            {/* <div className="container-seeRecipeBtn">
+                                <button className="seeRecipeBtn" id={e._id} onClick={(e) => goToRecipesPage(e.target.id)}>Ver receta completa</button>
+                            </div> */}
                         </div>
 
-                        <button id={e._id} onClick={(e) => goToRecipesPage(e.target.id)}>Ver receta completa</button>
                     </div>) : ""}
             </div>
         </div>);
