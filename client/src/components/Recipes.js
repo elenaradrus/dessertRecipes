@@ -32,28 +32,46 @@ const Recipes = () => {
     }
 
     return (<div>
-        <h1>Recipes Page</h1>
         <div className="oneRecipe">
+            <div className="header">
+                <h2 className="cakebook">Cakebook</h2>
+                <button className="btnRecipes" onClick={() => goToHomePage()}>Volver a recetas</button>
+            </div>
             {data ? data.map((e, i) =>
                 <div key={i}>
                     <div className="recipeInfo">
-                        <div><h1>{e.name}</h1></div>
-                        <div><p>{e.description}</p></div>
-                        <div className="container-recipeImage">
-                            <img className="recipeImage" src={e.image} alt="recipeImg" />
+
+                        <div className="recipeTitle">
+                            <h1>{e.name}</h1>
                         </div>
-                        <div className="container-ingredients">
-                            <div className="ingredientsList">{e.ingredients}</div>
+
+                        <div>
+                            <p>{e.description}</p>
                         </div>
-                        <div className="container-steps">
-                            <div className="steps">{e.steps}</div>
+
+                        <div className="mainContainer">
+                            <div className="container-recipeImage">
+                                <img className="recipeImage" src={e.image} alt="recipeImg" />
+                            </div>
+
+                            <div className="container-recipeHowTo">
+                                <div className="container-ingredients">
+                                    <h3 className="ingredients">Ingredientes</h3>
+                                    <div className="ingredientsList">{e.ingredients}</div>
+                                </div>
+
+                                <div className="container-steps">
+                                    <h3 className="howTo">Preparación</h3>
+                                    <div className="steps">{e.steps}</div>
+                                </div>
+                            </div>
+
                         </div>
 
 
                     </div>
                 </div>) : ""}
         </div>
-        <button className="btnRecipes" onClick={() => goToHomePage()}>Go back to Home Page</button>
     </div>);
 }
 

@@ -48,11 +48,10 @@ const Home = () => {
             <div className="list">
                 {data ? data.map((e, i) =>
                     <div key={i}>
-
                         <div className="listData">
                             {/* <div><p>{e.description}</p></div> */}
                             <div className="container-recipeImg">
-                                <img className="recipeImg" src={e.image} alt="recipeImage" id={e._id} onClick={(e) => goToRecipesPage(e.target.id)}/>
+                                <img className="recipeImg" src={e.image} alt="recipeImage" id={e._id} onClick={(e) => goToRecipesPage(e.target.id)} />
                             </div>
 
                             <div className="recipeName">
@@ -61,46 +60,48 @@ const Home = () => {
 
                             {/* <div className="container-seeRecipeBtn">
                                 <button className="seeRecipeBtn" id={e._id} onClick={(e) => goToRecipesPage(e.target.id)}>Ver receta completa</button>
-                            </div> */}
-
+                                </div> */}
                         </div>
                     </div>) : ""}
             </div>
         )
-
     }
-
 
     return (
         <div>
-            <div>
-                <p>Busca recetas por ingredientes</p>
-                <select value={filter} onChange={(e) => setFilter(e.target.value)}>
-                    <option></option>
-                    <option>galleta</option>
-                    <option>mantequilla</option>
-                    <option>queso</option>
-                    <option>huevo</option>
-                    <option>harina</option>
-                    <option>fruta</option>
-                    <option>limón</option>
-                    <option>bicarbonato</option>
-                    <option>yogur</option>
-                    <option>semillas</option>
-                    <option>hojaldre</option>
-                    <option>cacahuete</option>
-                    <option>chocolate</option>
-                </select>
-                <button onClick={() => filter === '' ? window.location.reload() : getFilter()}>Buscar</button>
+            <div className="header">
+                <h2 className="cakebook" onClick={() => window.location.reload()}>Cakebook</h2>
+
+                <div className="container-filterByIngredient">
+                    <select className="filterByIngredient" placeholder="buscar ingrediente" value={filter} onChange={(e) => setFilter(e.target.value)} onKeyPress={() => filter === '' ? window.location.reload() : getFilter()}>
+                        <option></option>
+                        <option>galleta</option>
+                        <option>mantequilla</option>
+                        <option>queso</option>
+                        <option>huevo</option>
+                        <option>harina</option>
+                        <option>fruta</option>
+                        <option>limón</option>
+                        <option>bicarbonato</option>
+                        <option>yogur</option>
+                        <option>semillas</option>
+                        <option>hojaldre</option>
+                        <option>cacahuete</option>
+                        <option>chocolate</option>
+                    </select>
+                    <button className="searchBtn" onClick={() => filter === '' ? window.location.reload() : getFilter()}>Buscar</button>
+                </div>
             </div>
+
 
             <div className="list">
                 {data ? data.map((e, i) =>
                     <div key={i}>
+
                         <div className="listData">
                             {/* <div><p>{e.description}</p></div> */}
                             <div className="container-recipeImg">
-                                <img className="recipeImg" src={e.image} alt="recipeImage" id={e._id} onClick={(e) => goToRecipesPage(e.target.id)}/>
+                                <img className="recipeImg" src={e.image} alt="recipeImage" id={e._id} onClick={(e) => goToRecipesPage(e.target.id)} />
                             </div>
 
                             <div className="recipeName">
@@ -111,6 +112,7 @@ const Home = () => {
                                 <button className="seeRecipeBtn" id={e._id} onClick={(e) => goToRecipesPage(e.target.id)}>Ver receta completa</button>
                             </div> */}
                         </div>
+
 
                     </div>) : ""}
             </div>

@@ -1,10 +1,9 @@
 .list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 2rem;
+    justify-items: center;
     margin-bottom: 3rem;
     padding: 0rem 2rem 0rem 2rem;
-    width: 95%;
 }
 
 .listData {
@@ -12,9 +11,20 @@
     flex-direction: column;
     justify-content: center;
     margin-top: 3rem;
-    height: 45rem;
+    height: 35rem;
+    width: 20rem;
     box-shadow: 7px 3px 31px -11px rgba(0,0,0,0.48);
     border-radius: 1rem;
+}
+
+.cakebook {
+    cursor: pointer;
+}
+
+.container-filterByIngredient {
+    display: flex;
+    justify-content: space-evenly;
+    width: 20rem;
 }
 
 .container-recipeImg {
@@ -33,10 +43,41 @@
 .recipeName {
     height: 1%;
     display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
     justify-content: center;
     align-items: center;
 }
 
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 4rem;
+    border-radius: 0rem 0rem 1rem 1rem;
+    box-shadow: 7px 3px 31px -11px rgba(0,0,0,0.20);
+
+}
+
+.filterByIngredient {
+    height: 2rem;
+    width: 10rem;
+    background-color: #e3dad5;
+    border-style: none;
+    border-radius: .5rem;
+    box-shadow: 7px 3px 31px -11px rgba(0,0,0,0.20);
+}
+
+.searchBtn {
+    height: 2rem;
+    width: 5rem;
+    background-color: #e3dad5;    
+    border-style: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    box-shadow: 7px 3px 31px -11px rgba(0,0,0,0.20);
+
+}
 /* .container-seeRecipeBtn {
     display: flex;
     justify-content: center;
@@ -54,4 +95,4 @@
     border-radius: .5rem;
     cursor: pointer;
     box-shadow: 7px 3px 31px -7px rgba(0,0,0,0.78);
-} */
+}*/
