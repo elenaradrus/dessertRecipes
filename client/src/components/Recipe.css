@@ -1,11 +1,11 @@
 .recipeInfo {
     margin-top: 2rem;
     margin-bottom: 5rem;
+    height: fit-content;
 }
 
 .recipeTitle, .ingredients, .howTo {
     color: #e79796;
-
 }
 
 .mainContainer {
@@ -16,9 +16,7 @@
 
 .container-recipeImage {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     height: 40rem;
 }
 
@@ -30,10 +28,7 @@
 
 .container-recipeHowTo {
     width: 40rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: fit-content;
     padding: 1rem 2rem 2rem 2rem;
     border-radius: .5rem;
     box-shadow: 7px 3px 31px -11px rgba(0,0,0,0.20);
@@ -44,14 +39,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
-    
+    max-width: 100%; 
 }
 
 .ingredientsList {
-    height: 12rem;
-    width: 40rem;
+    /* height: 12rem;
+    width: 40rem; */
     line-height: 2rem;
+    text-align: justify;
 }
 
 .container-steps {
@@ -60,12 +55,11 @@
     justify-content: center;
     align-items: center;
     max-width: 100%;
-
 }
 
 .steps {
     line-height: 2rem;
-    
+    text-align: justify;
 }
 
 .btnRecipes {
@@ -76,8 +70,9 @@
     border-radius: .5rem;
     cursor: pointer;
     box-shadow: 7px 3px 31px -11px rgba(0,0,0,0.20);
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    
 }
+
+
 
 

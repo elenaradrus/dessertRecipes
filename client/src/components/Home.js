@@ -73,7 +73,7 @@ const Home = () => {
                 <h2 className="cakebook" onClick={() => window.location.reload()}>Cakebook</h2>
 
                 <div className="container-filterByIngredient">
-                    <select className="filterByIngredient" placeholder="buscar ingrediente" value={filter} onChange={(e) => setFilter(e.target.value)} onKeyPress={() => filter === '' ? window.location.reload() : getFilter()}>
+                    <select className="filterByIngredient"  value={filter} onChange={(e) => setFilter(e.target.value)} onKeyPress={() => filter === '' ? window.location.reload() : getFilter()}>
                         <option></option>
                         <option>galleta</option>
                         <option>mantequilla</option>
