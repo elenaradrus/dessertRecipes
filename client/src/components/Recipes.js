@@ -41,12 +41,12 @@ const Recipes = () => {
                 <div key={i}>
                     <div className="recipeInfo">
 
-                        <div className="recipeTitle">
-                            <h1>{e.name}</h1>
+                        <div className="container-recipeTitle">
+                            <h1 className="recipeTitle">{e.name}</h1>
                         </div>
 
                         <div>
-                            <p>{e.description}</p>
+                            <p className="recipeDescription">{e.description}</p>
                         </div>
 
                         <div className="mainContainer">

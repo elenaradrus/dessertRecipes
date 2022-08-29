@@ -1,11 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;700&display=swap');
+
 .recipeInfo {
     margin-top: 2rem;
     margin-bottom: 5rem;
     height: fit-content;
 }
 
-.recipeTitle, .ingredients, .howTo {
+.container-recipeTitle, .ingredients, .howTo {
     color: #e79796;
+}
+
+.recipeTitle, .ingredients, .howTo {
+    font-family: 'Amatic SC', cursive;
+    font-size: 3.5rem;
+}
+
+.ingredients, .howTo {
+    font-size: 2rem;
 }
 
 .mainContainer {
@@ -42,11 +54,13 @@
     max-width: 100%; 
 }
 
-.ingredientsList {
-    /* height: 12rem;
-    width: 40rem; */
+.ingredientsList, .steps {
+    font-family: 'Spartan', sans-serif;
     line-height: 2rem;
     text-align: justify;
+}
+.recipeDescription {
+    font-family: 'Spartan', sans-serif;
 }
 
 .container-steps {
@@ -57,12 +71,9 @@
     max-width: 100%;
 }
 
-.steps {
-    line-height: 2rem;
-    text-align: justify;
-}
-
 .btnRecipes {
+    font-family: 'Spartan', sans-serif;
+    font-weight: bold;
     height: 2rem;
     width: 10rem;
     background-color: #e3dad5;    

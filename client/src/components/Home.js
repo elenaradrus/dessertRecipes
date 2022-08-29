@@ -54,8 +54,8 @@ const Home = () => {
                                 <img className="recipeImg" src={e.image} alt="recipeImage" id={e._id} onClick={(e) => goToRecipesPage(e.target.id)} />
                             </div>
 
-                            <div className="recipeName">
-                                <h2>{e.name}</h2>
+                            <div className="container-recipeName">
+                                <h2 className="recipeName">{e.name}</h2>
                             </div>
 
                             {/* <div className="container-seeRecipeBtn">
@@ -104,8 +104,8 @@ const Home = () => {
                                 <img className="recipeImg" src={e.image} alt="recipeImage" id={e._id} onClick={(e) => goToRecipesPage(e.target.id)} />
                             </div>
 
-                            <div className="recipeName">
-                                <h2>{e.name}</h2>
+                            <div className="container-recipeName">
+                                <h2 className="recipeName">{e.name}</h2>
                             </div>
 
                             {/* <div className="container-seeRecipeBtn">
