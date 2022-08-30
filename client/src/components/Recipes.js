@@ -34,9 +34,10 @@ const Recipes = () => {
     return (<div>
         <div className="oneRecipe">
             <div className="header">
-                <h2 className="cakebook">Cakebook</h2>
                 <button className="btnRecipes" onClick={() => goToHomePage()}>Volver a recetas</button>
+                <h2 className="cakebook">Cakebook</h2>
             </div>
+
             {data ? data.map((e, i) =>
                 <div key={i}>
                     <div className="recipeInfo">
