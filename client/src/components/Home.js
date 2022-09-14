@@ -24,9 +24,9 @@ const Home = () => {
         navigate(`/recipes/${id}`);
     }
 
-    // const goToHomePage = () => {
-    //     navigate('/');
-    // }
+    const goToAdminLogIn = () => {
+        navigate('/admin');
+    }
 
     const getFilter = () => {
 
@@ -116,7 +116,13 @@ const Home = () => {
 
                     </div>) : ""}
             </div>
-        </div>);
+            <footer className="homePageFooter">
+                <button className="adminBtn" onClick={() => goToAdminLogIn()}>Panel de administrador</button>
+                <p className="copyright">Cakebook &copy; 2022</p>
+                <p className="copyrightText">Todas las recetas son recogidas <br/>del libro <a className="bookLink" href="https://www.amazon.es/Dulces-recetas-disfrutar-estaci%C3%B3n-ilustrados/dp/8412033426/ref=sr_1_1?adgrpid=105323427770&gclid=Cj0KCQjw94WZBhDtARIsAKxWG-_QhFNYJ2_JFDsdFsGOnPEyf0gQXD-mhJ19wB8ifX6xc6zqYUcbxisaAsdhEALw_wcB&hvadid=468714496955&hvdev=c&hvlocphy=9061041&hvnetw=g&hvqmt=e&hvrand=2267938589869631637&hvtargid=kwd-1166773571466&hydadcr=21654_1809393&keywords=dulce+todo+el+a%C3%B1o&qid=1663143137&sr=8-1">"Dulces todo el año"</a></p>
+            </footer>
+        </div>
+    );
 }
 
 export default Home;

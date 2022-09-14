@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;700&display=swap');
+
 
 
 .list {
@@ -97,21 +99,37 @@
     box-shadow: 7px 3px 31px -11px rgba(0,0,0,0.20);
 
 }
-/* .container-seeRecipeBtn {
+
+.homePageFooter {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    height: 5rem;
+    border-radius: 1rem 1rem 0rem 0rem;
+    box-shadow: 7px 3px 31px -11px rgba(0,0,0,0.20);
 }
 
-.seeRecipeBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3rem;
-    width: 10rem;
-    height: 1.5rem;
-    background-color: white;
+.adminBtn {
+    font-family: 'Spartan', sans-serif;
+    font-weight: bold;
+    height: 2.5rem;
+    width: 13rem;
+    background-color: #e3dad5;    
     border-style: none;
     border-radius: .5rem;
     cursor: pointer;
-    box-shadow: 7px 3px 31px -7px rgba(0,0,0,0.78);
-}*/
+    box-shadow: 7px 3px 31px -11px rgba(0,0,0,0.20);
+}
+
+.copyright, .copyrightText {
+    font-family: 'Spartan', sans-serif;
+}
+
+.copyrightText {
+    line-height: 1.5rem;
+}
+
+.bookLink {
+    text-decoration: underline;
+    color: black;
+}
