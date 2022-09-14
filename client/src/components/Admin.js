@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import CakebookHeader from "./CakebookHeader";
 import "./Admin.css"
 
 const Admin = () => {
@@ -21,15 +22,9 @@ const Admin = () => {
         }
     };
 
-    const goToHomePage = () => {
-        navigate('/');
-    };
-
     return (
         <div>
-            <div className='header'>
-                <h2 className='cakebook' onClick={() => goToHomePage()}>Cakebook</h2>
-            </div>
+            <CakebookHeader />
 
             <div className='containerAdmin'>
                 <div className="errorMessage">
@@ -42,7 +37,6 @@ const Admin = () => {
                     <button className="logAdminBtn" onClick={() => logAdmin()}>Iniciar sesión</button>
                 </div>
             </div>
-
         </div>
     );
 }
