@@ -1,0 +1,52 @@
+textarea {
+    width: 25rem;
+    height: 15rem;
+    border-radius: .5rem;
+    border-style: none;
+}
+
+.containerAdminPanel {
+    height: 100vh;
+}
+
+.admin-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 3rem;
+}
+
+.titleAdminPanel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.recipeInfoAdminPanel {
+    border-radius: .5rem;
+    border-style: none;
+    height: 2rem;
+    width: 20rem;
+}
+
+textarea, .recipeInfoAdminPanel {
+    box-shadow: 7px 3px 31px -11px rgba(0,0,0,0.20);
+}
+
+label {
+    font-family: 'Spartan', sans-serif;
+}
+
+.addRecipeAdminPanel {
+    font-family: 'Spartan', sans-serif;
+    font-weight: bold;
+    height: 2rem;
+    width: 10rem;
+    background-color: #e3dad5;    
+    border-style: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    box-shadow: 7px 3px 31px -11px rgba(0,0,0,0.20);
+}
